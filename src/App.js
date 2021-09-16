@@ -3,11 +3,11 @@ import { useEffect, useState } from "react"
 const fetchTakeShape = async ()=>{
   try{
     const result = await fetch(
-      'YOUR-ENDPOINT-HERE',
+      process.env.REACT_APP_TAKESHAPE_API_ENDPOINT,
       {
         method: 'POST',
         headers: {
-          "Authorization": `Bearer YOUR-API-KEY-HERE`
+          "Authorization": `Bearer ${process.env.REACT_APP_TAKESHAPE_ENDPOINT}`
         },
         body: JSON.stringify({
             query: "query {getProductList{items{_id name price}}}"
